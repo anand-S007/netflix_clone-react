@@ -1,5 +1,88 @@
 .signup {
     height: 100vh;
-    background-image: linear-gradient(#0000007e, #0000007e), url(/public/background_banner.jpg);
+    background-image: linear-gradient(#0000007e, #0000007e), url(/background_banner.jpg);
     padding: 20px 8%;
+}
+
+.signup__logo {
+    width: 150px;
+}
+
+.signup__form {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 60px;
+    margin: auto;
+}
+
+.signup__title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 38px;
+}
+
+.signup__input {
+    width: 100%;
+    height: 50px;
+    background: #333;
+    color: white;
+    margin: 12px 0;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.signup__input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.signup__btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 16px;
+    background: #e50915;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.signup__help {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+.signup__remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.signup__checkbox {
+    width: 18px;
+    height: 18px;
+}
+
+.auth-toggle {
+    margin-top: 14px;
+    color: #737373;
+}
+
+.auth-toggle__link {
+    margin-left: 6px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
 }
