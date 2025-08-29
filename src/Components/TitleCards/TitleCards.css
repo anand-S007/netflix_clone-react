@@ -1,0 +1,38 @@
+.titleCards {
+    margin-top: 50px;
+    margin-bottom:30px ;
+}
+
+.titleCards__heading {
+    margin-bottom: 8px;
+}
+
+.titleCard__list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.titleCard__list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.titleCards__card-img {
+    width: 240px;
+    border-radius: 4px ;
+    cursor: pointer;
+}
+
+.titleCards__card {
+    position: relative;
+}
+
+.titleCards__card-name {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

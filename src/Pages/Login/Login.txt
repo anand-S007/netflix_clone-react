@@ -1,0 +1,29 @@
+import React from 'react'
+import styles from './Login.module.css'
+import logo from '../../assets/logo.png'
+
+const Login = () => {
+  return (
+    <div className={styles['login']}>
+      <img src= {logo} alt="" className={styles["login__logo"]} />
+      <div className={styles["login__form"]}>
+        <h1 className={styles["login__title"]}>Sign In</h1>
+        <form action="" className= {styles["login__form-container"]}>
+          <input type="text" name="name" placeholder='Your name' className= {styles["login__input"]} />
+          <input type="email" name="email" placeholder='Emai' className= {styles["login__input"]}/>
+          <input type="password" name="password" placeholder='Password' className= {styles["login__input"]}/>
+          <button className={styles['login__btn']}>Sign Iin</button>
+          <div className={styles["login__help"]}>
+            <div className="login__remember">
+              <button type='checkbox' className='login__checkbox'></button>
+              <label htmlFor="" className={styles["login__checkbox-text"]}>Remember Me</label>
+            </div>
+            <p className={styles["login__help-text"]}>Need Help?</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+export default Login
