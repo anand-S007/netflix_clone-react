@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 import React, { useEffect, useState } from 'react'
 import styles from './Login.module.css'
 import logo from '../../assets/logo.png'
 
 const Login = () => {
-<<<<<<< Updated upstream
 
   const [signState, setSignState] = useState(() => {
     return localStorage.getItem("signState") || 'Sign In' ;
@@ -18,38 +13,19 @@ const Login = () => {
     localStorage.setItem('signState',signState)
     console.log('useEffect updates localStorage', signState)
   },[signState])
-=======
-  // Load from localStorage or default to "Sign In"
-  const [signState, setSignState] = useState(() => {
-    return localStorage.getItem("signState") || "Sign In";
-  });
-
-  // Save to localStorage whenever signState changes
-  useEffect(() => {
-    localStorage.setItem("signState", signState);
-  }, [signState]);
->>>>>>> Stashed changes
 
   const handleSignState = () => {
     setSignState(prev => (prev === "Sign In" ? "Sign Up" : "Sign In"));
   };
-<<<<<<< Updated upstream
   
 
   return (
     <div className={styles['signup']}>
       <img src={logo} alt="" className={styles["signup__logo"]} />
-=======
-
-  return (
-    <div className={styles['signup']}>
-      <img src={logo} alt="Netflix Logo" className={styles["signup__logo"]} />
->>>>>>> Stashed changes
 
       <div className={styles["signup__form"]}>
         <h1 className={styles["signup__title"]}>{signState}</h1>
 
-<<<<<<< Updated upstream
         <form action="" className={styles["signup__form-container"]}>
           {/* Only show name field if user is signing up */}
           {signState === "Sign Up" ?
@@ -64,44 +40,6 @@ const Login = () => {
             <div className={styles["signup__remember"]}>
               <input type="checkbox" id='remember' name="checkbox" className={styles["signup__checkbox"]} />
               <label htmlFor="remember" className={styles["signup__checkbox-text"]}>Remember Me</label>
-=======
-        <form className={styles["signup__form-container"]}>
-          {signState === "Sign Up" && (
-            <input 
-              type="text" 
-              name="name" 
-              placeholder="Your name" 
-              className={styles["signup__input"]} 
-            />
-          )}
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Email" 
-            className={styles["signup__input"]} 
-          />
-          <input 
-            type="password" 
-            name="password" 
-            placeholder="Password" 
-            className={styles["signup__input"]} 
-          />
-          <button type="button" className={styles['signup__btn']}>
-            {signState}
-          </button>
-
-          <div className={styles["signup__help"]}>
-            <div className={styles["signup__remember"]}>
-              <input 
-                type="checkbox" 
-                id="remember" 
-                name="checkbox" 
-                className={styles["signup__checkbox"]} 
-              />
-              <label htmlFor="remember" className={styles["signup__checkbox-text"]}>
-                Remember Me
-              </label>
->>>>>>> Stashed changes
             </div>
             <p className={styles["signup__help-text"]}>Need Help?</p>
           </div>
@@ -111,7 +49,6 @@ const Login = () => {
         <div className={styles["auth-toggle"]}>
           <p className={styles["auth-toggle__text"]}>
             {signState === "Sign In" ? "New to Netflix?" : "Already have account?"}
-<<<<<<< Updated upstream
             <span className={styles["auth-toggle__link"]} onClick={handleSignState}>
               {signState === "Sign In" ? "Sign Up Now" : "Sign In Now"}
             </span>
@@ -119,16 +56,6 @@ const Login = () => {
         </div>
 
 
-=======
-            <span 
-              className={styles["auth-toggle__link"]} 
-              onClick={handleSignState}
-            >
-              {signState === "Sign In" ? " Sign Up Now" : " Sign In Now"}
-            </span>
-          </p>
-        </div>
->>>>>>> Stashed changes
       </div>
     </div>
   );
