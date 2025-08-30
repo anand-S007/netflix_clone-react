@@ -6,7 +6,7 @@ import cards_data from '../../assets/cards/Cards_data'
 
 const TitleCards = ({title, categories}) => {
   const cardRef = useRef()
-
+  // Changess
   useEffect(() => {
     const element = cardRef.current;
 
