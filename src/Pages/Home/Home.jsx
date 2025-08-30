@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import hero_banner from '../../assets/hero_banner.jpg'
@@ -9,8 +9,10 @@ import TitleCards from '../../Components/TitleCards/TitleCards'
 import Footer from '../../Components/Footer/Footer'
 
 const Home = () => {
+
   return (
     <div className='home'>
+      {/* Navbar component */}
       <Navbar />
       <div className="hero">
         <img src={hero_banner} alt="Banner image" className="hero__banner-img" />
@@ -25,13 +27,14 @@ const Home = () => {
             <button className='btn'><img src={play_icon} alt="Play button" />Play</button>
             <button className='btn dark--btn'><img src={info_icon} alt="Info button" />More Info</button>
           </div>
-          <TitleCards />
+          
+          <TitleCards title={'Popular on Netflix'} category={"popular"} />
         </div>
       </div>
       <div className="more_cards">
-        <TitleCards title = {"Blockbuster Movies"} />
-        <TitleCards title = {"Only on Netflix"} />
-        <TitleCards title = {"Upcoming"} />
+        <TitleCards title = {"Blockbuster Movies"} category={"top_rated"}/>
+        <TitleCards title = {"Now Playing"} category={"now_playing"} />
+        <TitleCards title = {"Upcoming"} category={"upcoming"} />
         <TitleCards title = {"Top Pics for You"} />
       </div>
       <Footer/>
