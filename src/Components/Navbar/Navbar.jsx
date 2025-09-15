@@ -1,14 +1,35 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './Navbar.module.css'
 import logo from '../../assets/logo.png'
 import search_icon from '../../assets/search_icon.svg'
 import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
+import { logout } from '../../firebase/auth'
 
 const Navbar = () => {
+
+  const navbarRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(navbarRef.current)
+      if(window.scrollY >= 80) {
+        navbarRef.current?.classList.add(styles['navbar-dark'])
+      }else {
+        navbarRef.current?.classList.remove(styles['navbar-dark'])
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  },[])
+
   return (
-    <div className={styles.navbar}>
+    <div ref={navbarRef} className={styles.navbar}>
       {/* Navbar left section */}
       <div className={styles["navbar-left"]}>
         <img src={logo} alt="Netflix logo" className={styles['netflix__logo']} />
@@ -32,7 +53,7 @@ const Navbar = () => {
           <img src={profile_img} alt="Profile image" className={styles["navbar__profile-img"]} />
           <img src={caret_icon} alt="Caret icon" className={styles["navbar__profile-caret"]} />
           <div className={styles["navbar__dropdown"]}>
-            <p>Sign out from Netflix</p>
+            <p onClick={() => {logout()}}>Sign out from Netflix</p>
           </div>
         </div>
       </div>

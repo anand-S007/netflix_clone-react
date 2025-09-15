@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import './Home.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import hero_banner from '../../assets/hero_banner.jpg'
@@ -27,8 +26,10 @@ const Home = () => {
             <button className='btn'><img src={play_icon} alt="Play button" />Play</button>
             <button className='btn dark--btn'><img src={info_icon} alt="Info button" />More Info</button>
           </div>
-          
+          <div className='title-cards'>
           <TitleCards title={'Popular on Netflix'} category={"popular"} />
+
+          </div>
         </div>
       </div>
       <div className="more_cards">

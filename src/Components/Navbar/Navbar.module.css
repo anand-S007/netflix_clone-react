@@ -12,6 +12,10 @@
     z-index: 1;
 }
 
+.navbar-dark {
+  background: #141414;
+}
+
 .navbar-left {
     display: flex;
     align-items: center;
@@ -87,3 +91,24 @@
     display: block;
   }
   
+
+  @media (max-width: 800px) {
+    .navbar{
+      padding: 20px 4%;
+    }
+    .navbar-left ul {
+      display: none;
+    }
+    .navbar img {
+      height: 25px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .netflix__logo {
+      height: 25px;
+    }
+    .navbar__right {
+      gap: 10px;
+    }
+  }
